@@ -75,6 +75,7 @@ body {
 /* 404 page */
 .error-page {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -84,33 +85,32 @@ body {
     text-align: left;
 }
 
-.image, .text {
+.text {
     box-sizing: border-box;
-}
-
-.image {
-    flex: 1;
-    text-align: center;
-}
-
-.image img {
-    width: min(100%, 520px);
-    height: auto;
 }
 
 .text {
     flex: 1;
     max-width: 560px;
+    text-align: center;
+}
+
+.text img {
+    width: min(70%, 560px);
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
 }
 
 .error-title {
-    font-size: clamp(36px, 7vw, 60px);
+    font-size: clamp(30px, 5vw, 52px);
     margin-top: 0;
     margin-bottom: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 1.1;
     color: #a02e2a;
+    white-space: nowrap;
 }
 
 .subtitle-errorA,
@@ -125,8 +125,9 @@ body {
 
 @media (max-width: 768px) {
     .home-body {
-        justify-content: flex-start;
-        padding-top: 88px;
+        justify-content: center;
+        min-height: auto;
+        padding: 48px 20px 20px;
     }
 
     .home-title {
@@ -135,18 +136,19 @@ body {
 
     .subtitle-home,
     .subtitle-errorB {
-        padding-bottom: 28px;
+        padding-bottom: 16px;
     }
 
     .error-page {
         flex-direction: column;
         text-align: center;
-        gap: 24px;
-        padding: 48px 24px 84px;
+        gap: 0;
+        min-height: auto;
+        padding: 32px 24px 20px;
     }
 
-    .image img {
-        max-height: 38vh;
+    .text img {
+        max-height: 32vh;
         object-fit: contain;
     }
 }
